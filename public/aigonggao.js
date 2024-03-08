@@ -1,31 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 创建<link>元素并添加外部CSS文件
-    var cssLink = document.createElement("link");
-    cssLink.href = "https://cdn.staticfile.net/mdui/1.0.2/css/mdui.min.css";
-    cssLink.rel = "stylesheet";
-    document.head.appendChild(cssLink);
+    var dialogOverlay = document.createElement('div');
+    dialogOverlay.style.position = 'fixed';
+    dialogOverlay.style.top = '0';
+    dialogOverlay.style.left = '0';
+    dialogOverlay.style.width = '100%';
+    dialogOverlay.style.height = '100%';
+    dialogOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    dialogOverlay.style.display = 'none';
+    dialogOverlay.style.zIndex = '9999';
+    document.body.appendChild(dialogOverlay);
 
-    // 创建<script>元素并添加外部JS文件
-    var jsScript = document.createElement("script");
-    jsScript.src = "https://cdn.staticfile.net/mdui/1.0.2/js/mdui.min.js";
-    document.body.appendChild(jsScript);
+    var dialogBox = document.createElement('div');
+    dialogBox.style.position = 'fixed';
+    dialogBox.style.top = '50%';
+    dialogBox.style.left = '50%';
+    dialogBox.style.transform = 'translate(-50%, -50%)';
+    dialogBox.style.backgroundColor = 'white';
+    dialogBox.style.padding = '20px';
+    dialogBox.style.borderRadius = '5px';
+    dialogBox.style.zIndex = '10000';
+    dialogBox.innerHTML = '<h2>通知</h2><p>偏爱AI完全免费使用。</p><p>已对违规词进行屏蔽处理。</p><p>本站中转接口由木子聚合API免费赞助提供</p><p>木子聚合API: <a href="https://muziai.mom">https://muziai.mom</a></p><button id="closeButton">我明白了</button>';
+    dialogOverlay.appendChild(dialogBox);
 
-    // 在加载完外部JS文件后执行你的其他逻辑
-    jsScript.onload = function() {
-        var dialog = mdui.dialog({
-            title: '<font color="blue">通知</font>',
-            content: '<font color="red" size=5>偏爱AI完全免费使用。</font><br /><br /><font color="red">已对违规词进行屏蔽处理。</font><br><h2><font color="blue">本站中转接口由木子聚合API免费赞助提供</font></h2><br>木子聚合API: <a href="https://muziai.mom"><font color="#e91e63">https://muziai.mom</font></a>&nbsp;',
-            buttons: [
-                {
-                    text: '我明白了',
-                    onClick: function() {
-                        dialog.close(); // 关闭弹出框
-                    }
-                }
-            ],
-            modal: true
-        });
+    var closeButton = document.getElementById('closeButton');
+    closeButton.addEventListener('click', function() {
+        dialogOverlay.style.display = 'none';
+    });
 
-        dialog.open(); // 打开弹出框
-    };
+    dialogOverlay.style.display = 'block';
 });
