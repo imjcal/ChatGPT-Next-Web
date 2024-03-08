@@ -38,7 +38,6 @@ export default function RootLayout({
         <meta name="config" content={JSON.stringify(getClientConfig())} />
         <link rel="manifest" href="/site.webmanifest"></link>
         <script src="/serviceWorkerRegister.js" defer></script>
-        <script src="https://pagead2.cloudflare.goole.siuth.cn/js/aigonggao.js" defer></script>
       </head>
       <body>
         {children}
