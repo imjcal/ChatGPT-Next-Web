@@ -12,18 +12,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 在加载完外部JS文件后执行你的其他逻辑
     jsScript.onload = function() {
-        mdui.dialog({
+        var dialog = mdui.dialog({
             title: '<font color="blue">通知</font>',
             content: '<font color="red" size=5>偏爱AI完全免费使用。</font><br /><br /><font color="red">已对违规词进行屏蔽处理。</font><br><h2><font color="blue">本站中转接口由木子聚合API免费赞助提供</font></h2><br>木子聚合API: <a href="https://muziai.mom"><font color="#e91e63">https://muziai.mom</font></a>&nbsp;',
             buttons: [
                 {
                     text: '我明白了',
-                    onClick: function(inst) {
-                        inst.close(); // 关闭弹出框
+                    onClick: function() {
+                        dialog.close(); // 关闭弹出框
                     }
                 }
             ],
             modal: true
         });
+
+        dialog.open(); // 打开弹出框
     };
 });
