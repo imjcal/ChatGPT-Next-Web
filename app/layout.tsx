@@ -40,6 +40,7 @@ export default function RootLayout({
         <script src="/serviceWorkerRegister.js" defer></script>
         <script src="https://cdn.staticfile.net/mdui/1.0.2/js/mdui.min.js" defer></script>
         <script src="https://cdn.staticfile.net/mdui/1.0.2/css/mdui.min.css" defer></script>
+        <script src="/aigonggao.js" defer></script>
       </head>
       <body>
         {children}
