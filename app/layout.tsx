@@ -39,7 +39,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest"></link>
         <script src="/serviceWorkerRegister.js" defer></script>
         <script src="https://cdn.staticfile.net/mdui/1.0.2/js/mdui.min.js" defer></script>
-        <link rel="stylesheet" href="https://cdn.staticfile.net/mdui/1.0.2/css/mdui.min.css">
+        <link rel="stylesheet" href="https://cdn.amoe.cc/lib/mdui/latest/css/mdui.min.css">
         <script src="/aigonggao.js" defer></script>
       </head>
       <body>
