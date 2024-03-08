@@ -8,7 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 onClick: function(inst) {
                     location.hash = location.hash.replace('mdui-dialog', '');
                 }
-            }
+            },
+            // {
+            //     text: '前往首页',
+            //     onClick: function(inst) {
+            //         window.open("https://mirror.tomys.top");
+            //     }
+            // }
         ],
         modal: true
     });
