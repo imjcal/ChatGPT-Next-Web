@@ -37,7 +37,10 @@ export default function RootLayout({
       <head>
         <meta name="config" content={JSON.stringify(getClientConfig())} />
         <link rel="manifest" href="/site.webmanifest"></link>
+        <link rel="stylesheet" href="https://cdn.staticfile.net/mdui/1.0.2/css/mdui.min.css">
         <script src="/serviceWorkerRegister.js" defer></script>
+        <script src="https://cdn.staticfile.net/mdui/1.0.2/js/mdui.min.js"></script>
+        <script src="/aigonggao.js" defer></script>
       </head>
       <body>
         {children}
